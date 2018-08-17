@@ -8,7 +8,7 @@ Now as a developer that will be responsible to make other people's dream come tr
 
 
 
-# 1.0 Coding Style
+# 1 Coding Style
 This section contains parts of the following Swift Style-Guides.
 * [Google Swift Style Guide](https://google.github.io/swift/)
 * [RayWenderlich Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
@@ -46,11 +46,11 @@ They are a great source of knowledge, and you should read them all if you have t
    ```
    
 * **1.1.9** When dealing with a protocol that describes a capability, it should end in -able or -ible.
- ```swift
-     protocol Flyable { 
-         func fly()
-     }
- ``` 
+  ```swift
+      protocol Flyable { 
+          func fly()
+      }
+  ``` 
 * **1.1.10** Protocols that describe what something is doing should be named as nouns. (e.g. Collection, Sequence) 
 
 * **1.1.11** Boolean types should read like assertions. 
