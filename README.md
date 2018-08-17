@@ -46,11 +46,11 @@ They are a great source of knowledge, and you should read them all if you have t
    ```
    
 * **1.1.9** When dealing with a protocol that describes a capability, it should end in -able or -ible.
-```swift
-    protocol Flyable { 
-        func fly()
-    }
-``` 
+ ```swift
+     protocol Flyable { 
+         func fly()
+     }
+ ``` 
 * **1.1.10** Protocols that describe what something is doing should be named as nouns. (e.g. Collection, Sequence) 
 
 * **1.1.11** Boolean types should read like assertions. 
