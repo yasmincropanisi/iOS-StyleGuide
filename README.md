@@ -144,7 +144,66 @@ All our projects have Swift Lint activated. Therefore it's whitespace rule shoul
 
 ## 1.5 Optionals
 
+Always avoid force unwrap! Also try not to use implicitly unwrapped optionals. Except when you are sure that there will be a value to unwrap, like user-interface objects whose lifetimes are based on the UI lifecycle instead of being strictly based on the lifetime of the owning object.
+
+Use optional binding when it's more convenient to unwrap once and perform multiple operations:
+
+if let textContainer = self.textContainer {
+  // do many things with textContainer
+}
+
+If you don't need to use the value stored in an optional, but need to know whether or not this values is nil, check this value against nil instead of use if let sintax.
+
 ## 1.6 Using `Guard` Statements
 
+Guard is a statement control to make early exits and used to improve code readability.
+Prefer guard statements to unwrap multiple optionals.
+```swift
+    // PREFERED
+    func printSum(a: Int?, b: Int?, c: Int?) {
+        guard let a = a, let b = b, let c = c else {
+         return
+        }
+        let sum = a + b + c
+        print(sum)
+    }
+    
+    //
+    // NOT PREFERED
+    func printSum(a: Int?, b: Int?, c: Int?) {
+        if let a = a {
+            if let b = b {
+                if let c = c {
+                    let sum = a + b + c
+                    print(sum)
+                } else {
+                      fatalError("impossible")
+                  }
+            } else {
+                fatalError("impossible")
+            }
+        } else {
+              fatalError("impossible")
+        }
+    }
+```
 ## 1.7 Documentation
+
+Documentation comments are written using the format where each line is preceded by a triple slash (///).
+Document the parameters, return value, and thrown errors of functions using the Parameter(s), Returns, and Throws tags.
+An easy way to write documentation comments in Xcode is to place the text cursor on the declaration and press 
+Command + Option + /.
+
+## 1.8 Code organization
+
+* **1.8.1** Use the tag // MARK: - comment to keep things well-organized.
+
+* **1.8.2** When implementing a protocol, use extensions in order to separate your code into logical blocks of functionality.
+
+* **1.8.3** Remove unused code, like Xcode templates.
+
+* **1.8.4** Keep imports minimal
+
+
+
  
